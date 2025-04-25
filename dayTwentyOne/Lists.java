@@ -14,7 +14,7 @@ public class Lists {
         ReturnList returnList = new ReturnList();
         returnList.print(myList); */
 
-        ReturnSmallest returnSmallest = new ReturnSmallest();
+        ReturnFromTo returnFromTo = new ReturnFromTo();
         ArrayList<Integer> myNumList = new ArrayList<>();
 
         while (myNumList.size() < 5) {
@@ -23,7 +23,7 @@ public class Lists {
         }
 
         if (myNumList.size() == 5) {
-            returnSmallest.returnSmallest(myNumList, 7);;
+            returnFromTo.returnFromTo(myNumList, 5, 15);;
         }
     }
 }
@@ -115,11 +115,16 @@ class ReturnList {
     }
 }
 
-class ReturnSmallest {
-    public void returnSmallest(ArrayList<Integer> nums, int threshhold) {for (Integer num : nums) {
-            if (num < threshhold) {
+class ReturnFromTo {
+    public void returnFromTo(ArrayList<Integer> nums, int minThreshhold, int threshhold) {
+        int sum = 0;
+
+        for (Integer num : nums) {
+            if (num > minThreshhold && num < threshhold) {
+                sum += num;
                 System.out.println(num);
             }
         }
+        System.out.println("The sum of the provided numbers is " + sum);
     }
 }
