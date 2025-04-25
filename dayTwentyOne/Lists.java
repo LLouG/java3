@@ -3,10 +3,28 @@ import java.util.Scanner;
 
 public class Lists {
     public static void main(String[] args) {
-        AddToList addToList = new AddToList();
+        Scanner scan = new Scanner(System.in);
+
+        /* AddToList addToList = new AddToList();
         addToList.addTolist();
         System.out.println(addToList.findSum());
-        System.out.println(addToList.findSmallest());
+        System.out.println(addToList.findSmallest()); */
+
+        /* ArrayList<String> myList = new ArrayList<>();
+        ReturnList returnList = new ReturnList();
+        returnList.print(myList); */
+
+        ReturnSmallest returnSmallest = new ReturnSmallest();
+        ArrayList<Integer> myNumList = new ArrayList<>();
+
+        while (myNumList.size() < 5) {
+            System.out.print("Say a number: ");
+            myNumList.add(Integer.valueOf(scan.nextLine()));
+        }
+
+        if (myNumList.size() == 5) {
+            returnSmallest.returnSmallest(myNumList, 7);;
+        }
     }
 }
 
@@ -36,12 +54,12 @@ class AddToList {
             System.out.print("Say a number (0 to quit): ");            
             int userInput = Integer.valueOf(scan.nextLine());
 
-            if (userInput != 0) {
+            if (userInput != 0 && userInput >= 1) {
                 numArr.add(userInput);
                 System.out.println(userInput + " was added to the list.");
             }
             
-            if (userInput == 0) {
+            if (userInput <= 0) {
                 break;
             }
         }
@@ -56,7 +74,7 @@ class AddToList {
             sum += integer;            
         }
 
-        // System.out.println("The sum of " + finalStr + "is " + sum);
+        
         return "The sum of " + finalStr + "is " + sum;
     }
 
@@ -71,5 +89,37 @@ class AddToList {
             }
         }
         return "The smallest number was " + smallest;
+    }
+}
+
+class ReturnList {
+    public static void print(ArrayList<String> list) {
+        Scanner scan = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("Type a word to be added to the list (leave it empty to quit)");
+            String userInput = String.valueOf(scan.nextLine());
+
+            if (userInput == "") {
+                list.remove(userInput);
+                break;
+            } else {
+                list.add(userInput);     
+                System.out.println(userInput + " was added to the list.");           
+            }            
+        }
+
+        for (String value : list) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
+class ReturnSmallest {
+    public void returnSmallest(ArrayList<Integer> nums, int threshhold) {for (Integer num : nums) {
+            if (num < threshhold) {
+                System.out.println(num);
+            }
+        }
     }
 }
