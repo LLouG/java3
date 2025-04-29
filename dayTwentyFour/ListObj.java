@@ -24,10 +24,11 @@ public class ListObj {
         
         System.out.println();        
         System.out.println("Total of names: " + persons.size());
-        System.out.println("Persons: ");
         
         System.out.println("What is the minimum age?");
         int minAge = Integer.valueOf(scanner.nextLine());
+
+        System.out.println("Persons: ");
         for (Person person : persons) {
             if(person.getAge() >= minAge){
                 System.out.println(person);

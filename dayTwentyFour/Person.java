@@ -9,14 +9,15 @@ class Person {
         this.age = age;
     }
 
-    // setters are required here, otherwise it will print the location in the memory instead
-    public void setName(String newName) {
+    // If the object's properties need to be changed after creation (mutable object), then setters are necessary. While the constructor initializes the object's initial state, setters provide a mechanism to modify that state later on.
+
+   /* public void setName(String newName) {
         this.name = newName;
     }
 
     public void setAge(int newAge) {
         this.age = newAge;
-    }
+    } */
 
     public String getName() {
         return this.name;
