@@ -1,6 +1,6 @@
 package dayTwentySeven;
 
-public class Oop {
+public class ClockApp {
     public static void main(String[] args) {
         Clock clock = new Clock();
 
