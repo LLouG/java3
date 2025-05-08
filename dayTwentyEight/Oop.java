@@ -26,7 +26,7 @@ public class Oop {
         System.out.println(person); */
 
         Person loug = new Person("Loug");
-        System.out.println(loug);
+        System.out.println(loug.printPerson());
     }
 }
 
@@ -63,8 +63,8 @@ class Person {
         return this.age;
     }
 
-    public void printPerson() {
-        System.out.println(this.name + " is " + this.age + " years old."); // TODO why is toString() being returned instead of this?
+    public String printPerson() {
+        return this.name + " is " + this.age + " years old.";
     }
 
     public double bodyMassIndex() {
