@@ -2,6 +2,8 @@ package dayTwentyEight;
 
 import java.util.Scanner;
 
+// Object as a method parameter
+
 public class Oop {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
