@@ -3,7 +3,25 @@ package dayTwentyNine;
 public class ObjectsAndReferences {
     public static void main(String[] args) {
         Books book = new Books("Three Kingdoms");
-        System.out.println(book);
+        book.setPages(251);
+
+        BooksPages pages = new BooksPages(250);
+        System.out.println(pages.minPages(book));
+    }
+}
+
+class BooksPages {
+    private int minPages;
+
+    public BooksPages(int minPages) {
+        this.minPages = minPages;
+    }
+
+    public boolean minPages(Books books) {
+        if (books.getPages() < this.minPages) {
+            return false;
+        }
+        return true;
     }
 }
 
@@ -13,7 +31,7 @@ class Books {
     private int pages;
 
     public Books(String bookName) {
-        this(bookName, "", 0);
+        this(bookName, "Unknown", 0);
     }
 
     public Books(String bookName, String author, int pages) {
@@ -47,6 +65,6 @@ class Books {
     }
 
     public String toString() {
-        return "Book: " + this.bookName + "\nAuthor: " + this.author + "\nNumber of pages: ";
+        return "Book: " + this.bookName + "\nAuthor: " + this.author + "\nNumber of pages: " + this.pages;
     }
 }
