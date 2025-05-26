@@ -19,6 +19,6 @@ public class AmusementParkRide {
     }
 
     public String toString() {
-        return name + ", " + lowestHeight;
+        return name + ", minimum height: " + lowestHeight;
     }
 }
