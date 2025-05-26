@@ -25,6 +25,18 @@ public class Person {
         this.weight = newWeight;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
     public String toString() {
         return "Person name: " + this.name + "\nAge: " + this.age + " years old \nbody mass index is: " + bodyMassIndex();
     }
