@@ -10,7 +10,7 @@ public class ObjectsAndReferences {
         BooksPages pages = new BooksPages(250);
         System.out.println(pages.minPages(book)); */
    
-        Person mari = new Person("Mari");
+        /* Person mari = new Person("Mari");
         mari.setHeight(154);
 
         Person haejoon = new Person("Haejoon");
@@ -30,6 +30,13 @@ public class ObjectsAndReferences {
             System.out.println(haejoon.getName() + " may NOT enter the ride.");
         }
 
-        System.out.println(waterTrack);
+        System.out.println(waterTrack); */
+
+        SimpleDate simpleDate = new SimpleDate(1, 1, 780);
+        PersonBday muhammad = new PersonBday("Muhammad ibn Musa al-Khwarizmi", simpleDate);
+        PersonBday pascal = new PersonBday("Blaise Pascal", 19, 6, 1923);
+
+        System.out.println(muhammad);
+        System.out.println(pascal);
     }
 }
